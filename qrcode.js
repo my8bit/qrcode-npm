@@ -389,6 +389,12 @@ exports.qrcode = function() {
 			_dataCache = null;
 		};
 
+		_this.replaceData = function(data) {
+			var newData = qr8BitByte(data);
+			_dataList = [newData];
+			_dataCache = null;
+		};
+
 		_this.isDark = function(row, col) {
 			if (row < 0 || _moduleCount <= row || col < 0 || _moduleCount <= col) {
 				throw new Error(row + ',' + col);
